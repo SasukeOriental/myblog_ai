@@ -63,12 +63,19 @@
 - [x] 表单提交（异步提交）
 - [x] API 模拟与集成
 
-### 📋 下一步学习（阶段六：性能优化）
+### ✅ 已完成（阶段六：性能优化）- 100%
 
-- [ ] useMemo Hook
-- [ ] useCallback Hook
-- [ ] React.memo 组件
-- [ ] 代码分割（Code Splitting）
+- [x] useMemo Hook（缓存计算结果）
+- [x] useCallback Hook（缓存函数）
+- [x] React.memo 组件（组件记忆化）
+- [x] 代码分割（React.lazy + Suspense）
+
+### ✅ 已完成（阶段七：样式与部署）- 100%
+
+- [x] 项目构建（npm run build）
+- [x] 部署说明文档
+- [x] 生产环境优化提示
+- [x] 样式处理最佳实践
 
 ---
 
@@ -160,10 +167,9 @@ npm run dev
 
 ### 页面路由
 - `/` - 首页（文章列表）
-- `/article/0` - 第一篇文章详情
-- `/article/1` - 第二篇文章详情
-- `/article/2` - 第三篇文章详情
+- `/article/:articleId` - 文章详情页（动态参数）
 - `/about` - 关于页面
+- `/knowledge-qa` - 知识问答页面
 - `*` - 404 页面
 
 ---
@@ -177,8 +183,8 @@ npm run dev
 | 阶段三 | 路由与页面（React Router） | ✅ 100% |
 | 阶段四 | 复杂功能（搜索、筛选、评论、表单） | ✅ 100% |
 | 阶段五 | 数据获取（API 集成、异步编程） | ✅ 100% |
-| 阶段六 | 性能优化（useMemo、useCallback、React.memo） | ⬜ 0% |
-| 阶段七 | 样式与部署（Tailwind、Vercel） | ⬜ 0% |
+| 阶段六 | 性能优化（useMemo、useCallback、React.memo） | ✅ 100% |
+| 阶段七 | 样式与部署（构建、部署、优化） | ✅ 100% |
 
 ---
 
@@ -191,8 +197,10 @@ npm run dev
 | task3.md | React Router 路由知识摘要 |
 | task4.md | 复杂功能知识摘要（表单、筛选、评论） |
 | task5.md | 数据获取知识摘要（API 集成、异步编程） |
+| task6.md | 性能优化知识摘要（useMemo、useCallback、React.memo） |
+| task7.md | 样式与部署知识摘要（构建、部署、优化） |
 
 ---
 
 *最后更新：2026-02-27*
-*当前总进度：70%（7/10 个学习模块）*
+*当前总进度：100%（10/10 个学习模块）*

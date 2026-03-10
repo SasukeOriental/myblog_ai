@@ -1,8 +1,9 @@
 // components/ArticleCard.jsx
 // 文章卡片组件 - 展示单篇文章
 // 通过 props 接收文章数据，支持点击跳转到详情页
+// 性能优化：React.memo 组件记忆化
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 
 function ArticleCard(props) {
@@ -118,4 +119,6 @@ function ArticleCard(props) {
   );
 }
 
-export default ArticleCard;
+// ========== 性能优化：React.memo 组件记忆化 ==========
+// 只有当 props 发生变化时才重新渲染组件
+export default memo(ArticleCard);

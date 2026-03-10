@@ -1,9 +1,10 @@
 // components/ArticleList.jsx
 // 文章列表组件 - 展示多篇文章卡片
 // 支持搜索、分类筛选、文章过滤、异步数据获取
+// 性能优化：useMemo 缓存计算结果
 
 import ArticleCard from './ArticleCard';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { fetchArticles, searchArticles } from '../api/articles';
 
 function ArticleList() {
@@ -72,11 +73,17 @@ function ArticleList() {
     }
   }, [searchQuery, selectedCategory]);  // 当搜索词或分类变化时重新搜索
 
-  // 提取所有不重复的分类
-  const categories = ['全部', ...new Set(articles.map(article => article.category))];
+  // ========== 性能优化：useMemo 缓存分类列表 ==========
+  // 只在 articles 数组变化时重新计算
+  const categories = useMemo(() => {
+    return ['全部', ...new Set(articles.map(article => article.category))];
+  }, [articles]);  // 依赖：articles
 
-  // 获取当前要显示的文章
-  const displayArticles = searchResults !== null ? searchResults : articles;
+  // ========== 性能优化：useMemo 缓存显示文章 ==========
+  // 只在 searchResults 或 articles 变化时重新计算
+  const displayArticles = useMemo(() => {
+    return searchResults !== null ? searchResults : articles;
+  }, [searchResults, articles]);  // 依赖：searchResults, articles
 
   return (
     <div className="article-list">

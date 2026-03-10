@@ -61,6 +61,11 @@ function Header() {
             <li>
               <Link to="/">联系</Link>
             </li>
+
+            {/* 知识问答链接 */}
+            <li className={currentPath === '/knowledge-qa' ? 'active' : ''}>
+              <Link to="/knowledge-qa">知识问答</Link>
+            </li>
           </ul>
         </nav>
 
